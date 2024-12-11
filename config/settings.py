@@ -134,5 +134,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+#picture settings 
+import os
+
+MEDIA_URL = '/media/'  # آدرس URL برای دسترسی به فایل‌های آپلود شده
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # مسیر ذخیره فایل‌های آپلود شده
+
+
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
