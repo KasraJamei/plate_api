@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     
     #local apps
     "plate_api",
@@ -53,8 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -83,8 +80,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # Change this to the actual database name
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'plate_db',  # Change this to the actual database name
         'USER': 'root',
         'PASSWORD': 'Z~5xD37rQ<45i9B<',
         'HOST': '127.0.0.1',
@@ -141,6 +138,3 @@ import os
 MEDIA_URL = '/media/'  # آدرس URL برای دسترسی به فایل‌های آپلود شده
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # مسیر ذخیره فایل‌های آپلود شده
 
-
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
